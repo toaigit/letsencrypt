@@ -1,0 +1,20 @@
+version: '3.8'
+
+networks:
+  default:
+    external:
+      name: letsNET
+
+services:
+
+  web:
+        image: letsencrypt
+        container_name: certbot
+        restart: always
+        ports:
+                - "80:80"
+                - "443:443"
+        volumes: 
+          - /home/toaivo/data/letsencrypt/html:/usr/local/apache2/htdocs
+          - /home/toaivo/data/letsencrypt/log:/usr/local/apache2/logs
+          - /home/toaivo/data/letsencrypt/certs:/etc/letsencrypt/archive

@@ -1,0 +1,4 @@
+#!/bin/bash
+#  this scrip will issue a certbot ceronly command to get the certificate
+
+certbot certonly  --webroot -w /usr/local/apache2/htdocs -d SITENAME  -m EMAIL --agree-tos --no-eff-email

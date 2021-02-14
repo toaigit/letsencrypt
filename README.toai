@@ -1,0 +1,13 @@
+This is a simple container with apache and certbot.
+You use this script to get free 90 days SSL certificate for your website.
+
+1.  Update vars.env file (SITENAME, DATADIR, EMAIL)
+2.  Run gen-vars.sh - this will generate the certbot.sh script to copy to the docker image.
+3.  Run build.sh - create a docker image with apache and certbot software.
+4.  Took down your current website so port 80 is available.
+5.  Run Startup script to startup this container.  
+6.  Run run.sh to create certificats under DATA/certs folder.
+7.  Run Shutdown script to stop this container.
+8.  Copy the new certificates from DATA/certs folder to your website certs folder
+9.  Start up your living website again.
+
